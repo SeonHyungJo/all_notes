@@ -6,3 +6,10 @@
 * `sequelize db:migrate`
 * `sequelize db:seed:all`
 * `yarn start`
+
+-----
+
+/signIn/passport/local에 post로 보내는 데이터
+
+`{"mem_email": "이메일 주소",
+	"mem_pw": "비밀번호"}`
