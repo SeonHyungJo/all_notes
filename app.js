@@ -20,13 +20,12 @@ app.use(express.static(path.join(__dirname, 'public')));  //  static 파일 경�
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(session({ secret: '비밀코드', resave: true, saveUninitialized: false })); // 세션 활성화
+// app.use(session({ secret: '비밀코드', resave: true, saveUninitialized: false })); // 세션 활성화
 app.use(passport.initialize()); // passport 구동
-app.use(passport.session()); // 세션 연결
-passportConfig();
-passportConfigGoo();
+// app.use(passport.session()); // 세션 연결
+passportConfig(); // 로컬 연결
+passportConfigGoo();  // google연결
 
-const models = require("./models");
 // 모든 경로는 routes/index.js로 이동
 app.use('/api', routes);
 
