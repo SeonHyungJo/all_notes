@@ -5,8 +5,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Hobby.associate = function(models) {
     // associations can be defined here
-    Hobby.hasMany(models.member);
-    Hobby.hasMany(models.member);
   };
   return Hobby;
 };

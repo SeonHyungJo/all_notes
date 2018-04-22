@@ -5,7 +5,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Major.associate = function(models) {
     // associations can be defined here
-    Major.hasMany(models.member);
   };
   return Major;
 };

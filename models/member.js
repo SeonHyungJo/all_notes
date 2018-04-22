@@ -44,7 +44,6 @@ module.exports = (sequelize, DataTypes) => {
       onUpdate: 'CASCADE',
       foreignKey: 'hobby_id_2'
     });
-    Member.hasMany(models.major);
   };
 
   //인스턴스 메서드

@@ -5,7 +5,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Member_level.associate = function(models) {
     // associations can be defined here
-    Member_level.hasMany(models.member);
   };
   return Member_level;
 };
