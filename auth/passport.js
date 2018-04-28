@@ -18,13 +18,23 @@ module.exports = () => {
       .then((member, err) =>{
         if (err) { done(null, false) }
 
-        // message는 아직 넘어가지 않으며 추후 에러 핸들링 커스터마이징 예정
-        // req를 사용할 수 있기 때문에 session의 flash message를 이용하면 가능할 것
-        if (!member) { done(null, false, { message: 'email이 잘못되었습니다.' }) }
-        if (!member.authenticate(password)) { done(null, false, { message: '비밀번호가 틀렸습니다' }) }
-        
-        // mask-json사용
-        return done(null, maskJson(member.dataValues));
+        // done은 err, user, info 순서입니다.
+
+        if (!member) { done(null, false, {
+          code: "001",
+          message: '유효하지 않은 email입니다. 확인해주세요.' 
+        })}
+
+        if (!member.authenticate(password)) {done(null, false, { 
+          code: "002",
+          message: '비밀번호가 틀렸습니다 확인해주세요.' 
+        })}
+
+        // mask-json사용하여 user의 비밀번호 숨김
+        return done(null, maskJson(member.dataValues), { 
+          code: "000",
+          message: "로그인이 성공적으로 이루어졌습니다."
+        });
       });
     }
   ));
