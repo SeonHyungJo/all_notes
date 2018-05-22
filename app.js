@@ -11,7 +11,7 @@ const passportConfig = require('./auth/passport'); // 로컬
 const passportConfigGoo = require('./auth/passport-goo'); // 구글
 
 // 포트설정
-const port = parseInt(process.env.PORT, 10) || 3000;
+const port = parseInt(process.env.PORT, 10) || 80;
 app.set('port', port);
 
 app.use(express.static(path.join(__dirname, 'public')));  //  static 파일 경로 설정
