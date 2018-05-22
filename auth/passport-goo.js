@@ -16,7 +16,7 @@ module.exports = () => {
     {
         clientID: "174904103649-avqmm3gi389paqsq6rfk4o3umrljtkf0.apps.googleusercontent.com",
         clientSecret: "YoLORHgU64l_zaQSqITltbhY",
-        callbackURL: "http://localhost:3000/api/google/callback"
+        callbackURL: "http://13.114.20.111/api/google/callback"
     },(accessToken, refreshToken, profile, done) => {
         // user등록 처리 후 
         // done으로 세션에 등록
